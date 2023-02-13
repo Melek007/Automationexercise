@@ -23,6 +23,44 @@
      </pluginManagement>
     </build>
    </profile>
+   <profile>
+    <id>RemoveFromCartTest</id>
+    <build>
+     <pluginManagement>
+      <plugins>
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M8</version>
+        <configuration>
+         <includes>
+          <include>**/CucumberTestNGTestrunner.java</include>
+         </includes>
+        </configuration>
+       </plugin>
+      </plugins>
+     </pluginManagement>
+    </build>
+   </profile>
+   <profile>
+   <id>TestCases3and17</id>
+    <build>
+     <pluginManagement>
+      <plugins>
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M8</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testNgFiles/testCases3and17.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+       </plugin>
+      </plugins>
+     </pluginManagement>
+    </build>
+   </profile>
   </profiles>
   <dependencies>
    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
