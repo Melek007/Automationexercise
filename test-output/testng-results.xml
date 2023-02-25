@@ -1,23 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-13T22:47:15 CET" name="Suite" finished-at="2023-02-13T22:47:44 CET" duration-ms="28191">
+  <suite started-at="2023-02-25T15:30:58 CET" name="Default suite" finished-at="2023-02-25T15:31:21 CET" duration-ms="23549">
     <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testCase1.CucumberTestNGTestRunner@6221a451]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-02-13T22:47:15 CET" name="Test" finished-at="2023-02-13T22:47:44 CET" duration-ms="28191">
-      <class name="TestCase3.LoginIncorrect">
-        <test-method signature="loginWrongData()[pri:0, instance:TestCase3.LoginIncorrect@2805d709]" started-at="2023-02-13T22:47:29 CET" name="loginWrongData" finished-at="2023-02-13T22:47:44 CET" duration-ms="14763" status="PASS">
+    <test started-at="2023-02-25T15:30:58 CET" name="Default test" finished-at="2023-02-25T15:31:21 CET" duration-ms="23549">
+      <class name="testCase1.CucumberTestNGTestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testCase1.CucumberTestNGTestRunner@6221a451]" started-at="2023-02-25T15:30:58 CET" name="setUpClass" finished-at="2023-02-25T15:30:58 CET" duration-ms="641" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@c2df90e]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginWrongData -->
-      </class> <!-- TestCase3.LoginIncorrect -->
-      <class name="TestCase17.RemoveProductsFromCart">
-        <test-method signature="removeProductFromCart()[pri:0, instance:TestCase17.RemoveProductsFromCart@5d7148e2]" started-at="2023-02-13T22:47:15 CET" name="removeProductFromCart" finished-at="2023-02-13T22:47:29 CET" duration-ms="13391" status="PASS">
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testCase1.CucumberTestNGTestRunner@6221a451]" started-at="2023-02-25T15:30:58 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-02-25T15:31:21 CET" duration-ms="22787" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Register User"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["End-to-end test"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- removeProductFromCart -->
-      </class> <!-- TestCase17.RemoveProductsFromCart -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testCase1.CucumberTestNGTestRunner@6221a451]" started-at="2023-02-25T15:31:21 CET" name="tearDownClass" finished-at="2023-02-25T15:31:21 CET" duration-ms="83" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- testCase1.CucumberTestNGTestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
