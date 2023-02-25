@@ -86,7 +86,7 @@ public class TestCase1 {
 		js.executeScript("window.scrollBy(0,1000)");
 		driver.findElement(By.cssSelector("button[data-qa='create-account']")).click();
 		
-		//Verify and
+		//Verify and continue
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//h2/b"))));
 		String actualText=driver.findElement(By.xpath("//h2/b")).getText();
