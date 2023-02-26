@@ -18,4 +18,4 @@ Feature: End-to-end test
 
     Examples: 
       | url  | firstName | mail  | password | day | month | year | lastName | company | address | country | state | city | zipcode | mobileNumber | expectedText |
-      | http://automationexercise.com | Marc | marcleclerc@link1.com | 123456 | 14 | February | 1989 | Leclerc | QA_company | 20RueX | Canada | state1 | city1 | 75000 | 0145678930 | ACCOUNT CREATED! |
+      | http://automationexercise.com | Marc | marcleclerc@mmmm1.com | 123456 | 14 | February | 1989 | Leclerc | QA_company | 20_Rue_X | Canada | state1 | city1 | 75000 | 0145678930 | ACCOUNT CREATED! |
