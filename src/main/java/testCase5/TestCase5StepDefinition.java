@@ -8,47 +8,63 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ContactUsForm {
-	public static void main(String[] args) {
-		//Test Data
-		String url="https://automationexercise.com/";
-		String name="Louis";
-		String email="louis@automation.com";
-		String subject="Test";
-		String message="TestCase number 5 is Ok";
-		String file="C:\\Users\\melek\\Downloads\\Upload_Test.docx";
-		String successMessage="Success! Your details have been submitted successfully.";
-		
-		//Launch browser
+public class TestCase5StepDefinition {
+	WebDriver driver= null;
+	
+	@Given("I Launch browser")
+	public void I_Launch_browser()
+	{
 		WebDriverManager.edgedriver().setup();
-		WebDriver driver=new EdgeDriver();
+		driver=new EdgeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		
-		//Navigate to url
+	}
+	
+	@And("^I Navigate to (.+)$")
+	public void I_Navigate_to_url(String url)
+	{
 		driver.get(url);
-		
-		//Click Contact Us
+	}
+	
+	@When("Click Contact Us")
+	public void Click_Contact_Us()
+	{
 		driver.findElement(By.xpath("//a[@href='/contact_us']")).click();
-		
-		//Enter contact details
+	}
+	
+	@And("^Enter contact details (.+), (.+), (.+) and (.+)$")
+	public void Enter_contact_details_name_email_subject_and_message(String name, String email, String subject, String message)
+	{
 		driver.findElement(By.name("name")).sendKeys(name);
 		driver.findElement(By.name("email")).sendKeys(email);
 		driver.findElement(By.name("subject")).sendKeys(subject);
 		driver.findElement(By.name("message")).sendKeys(message);
-		
-		//Upload file
+	}
+	
+	@And("^I Upload (.+)$")
+	public void I_Upload_file(String file)
+	{
 		driver.findElement(By.name("upload_file")).sendKeys(file);
-		
-		//Submit
+	}
+	
+	@And("I Submit")
+	public void I_Submit()
+	{
 		JavascriptExecutor js= (JavascriptExecutor)driver;
 		js.executeScript("window.scrollBy(0,1000)");
 		driver.findElement(By.name("submit")).click();
 		driver.switchTo().alert().accept();
-		
-		//Verify
+	}
+	
+	@Then("^I verify (.+)$")
+	public void I_verify_successMessage(String successMessage)
+	{
 		String actualText= driver.findElement(By.cssSelector(".status.alert.alert-success")).getText();
 		Assert.assertEquals(actualText, successMessage);
 	}
